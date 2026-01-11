@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Identity Colors */
+  --color-brand-blue: #2563eb;
+  --color-brand-orange: #ff9f43;
+  --color-brand-slate: #0f172a;
+  
+  /* Thick UI Radius */
+  --radius-4xl: 2rem;
+  --radius-5xl: 3rem;
+}
+
+/* Base Body Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f8fafc;
+  color: var(--color-brand-slate);
+}
+
+/* --- SIDEBAR NAVIGATION --- */
+
+/* Sidebar Item Base Styles */
+.admin-nav-item {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover State */
+.admin-nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.08); 
+  color: #ffffff;
+}
+
+/* Active State - Professional Deep Blue */
+.admin-nav-item-active {
+  background-color: #1e40af !important; /* Thick Blue (Tailwind blue-800) */
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* --- PROFESSIONAL TONAL BLUE SCROLLBAR --- */
+
+/* Container width */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px; /* Slightly slimmer for a sleeker, professional look */
+}
+
+/* The Track (Path) */
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* Subtle dark inset */
+  border-radius: 20px;
+  margin-block: 12px;
+}
+
+/* The Scrolling Line (Thumb) */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  /* Use a slightly lighter blue than the sidebar bg to create contrast */
+  background: #3b82f6; 
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Soft edge highlight */
+  transition: background 0.3s ease;
+}
+
+/* Professional interaction */
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #60a5fa; /* Lightens clearly when grabbed */
+}
+
+/* Firefox Compatibility */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #3b82f6 rgba(0, 0, 0, 0.1);
+}
+
+/* --- UTILITIES --- */
+.text-shadow-sm {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes progress {
+  0% { transform: scaleX(0); }
+  50% { transform: scaleX(0.7); }
+  100% { transform: scaleX(1); }
+}
+
+.animate-progress {
+  animation: progress 1.5s infinite ease-in-out;
+}
